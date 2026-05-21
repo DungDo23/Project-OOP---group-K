@@ -35,18 +35,15 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
         gameLoop.start();
     }
 
-    // ---------------------------------------------------------------
     // Painting
-    // ---------------------------------------------------------------
+    
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         renderer.draw(g, board, state);
     }
 
-    // ---------------------------------------------------------------
     // Movement & collision
-    // ---------------------------------------------------------------
     public void move() {
         if (state.showMenu) return;
 
@@ -204,10 +201,8 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
         }
         board.cherries.remove(eaten);
     }
-
-    // ---------------------------------------------------------------
+    
     // Helpers
-    // ---------------------------------------------------------------
     public boolean canMove(Block block, char direction) {
         int vx = 0, vy = 0;
         int step = GameBoard.TILE_SIZE / 4;
@@ -234,9 +229,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
         }
     }
 
-    // ---------------------------------------------------------------
     // Game loop
-    // ---------------------------------------------------------------
     @Override
     public void actionPerformed(ActionEvent e) {
         move();
@@ -244,9 +237,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener {
         if (state.gameOver) gameLoop.stop();
     }
 
-    // ---------------------------------------------------------------
     // Input
-    // ---------------------------------------------------------------
     @Override public void keyTyped(KeyEvent e) {}
     @Override public void keyPressed(KeyEvent e) {}
 
