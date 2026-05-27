@@ -52,7 +52,7 @@ public class Renderer {
             drawGameOver(g, state);
         } else {
             g.setColor(Color.WHITE);
-            g.drawString("x" + state.lives + "  Score: " + state.score, tileSize / 2, tileSize / 2);
+            g.drawString("Lives: " + state.lives + "  Score: " + state.score, tileSize / 2, tileSize / 2);
         }
     }
 
@@ -88,9 +88,8 @@ public class Renderer {
         g.setFont(new Font("Arial", Font.BOLD, 50));
         String text = "GAME OVER";
         int textWidth = g.getFontMetrics().stringWidth(text);
-        int x = (boardWidth - textWidth) / 2;
         int y = boardHeight / 2;
-        g.drawString(text, x, y);
+        g.drawString(text, (boardWidth - textWidth) / 2, y);
 
         g.setFont(new Font("Arial", Font.PLAIN, 25));
         g.setColor(Color.WHITE);
